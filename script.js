@@ -1,16 +1,16 @@
 let takingImages = [
-     `../assets/img/alaska-810433_1280.jpg`,
-     `../assets/img/anime-8788959_1280.jpg`,
-     `../assets/img/atmosphere-8752835_1280.png`,
-     `../assets/img/blue-tit-8521052_1280.jpg`,
-     `../assets/img/hurricane-92968_1280.jpg`,
-     `../assets/img/lake-2896379_1280.jpg`,
-     `../assets/img/moorente-8783210_1280.jpg`,
-     `../assets/img/sea-2563389_1280.jpg`,
-     `../assets/img/snow-bunting-6781122_1280.jpg`,
-     `../assets/img/snow-leopard-cubs-8039138_1280.jpg`,
-     `../assets/img/travel-8785493_1280.jpg`,
-     `../assets/img/winter-1675197_1280.jpg`,
+     `./assets/img/alaska-810433_1280.jpg`,
+     `./assets/img/anime-8788959_1280.jpg`,
+     `./assets/img/atmosphere-8752835_1280.png`,
+     `./assets/img/blue-tit-8521052_1280.jpg`,
+     `./assets/img/hurricane-92968_1280.jpg`,
+     `./assets/img/lake-2896379_1280.jpg`,
+     `./assets/img/moorente-8783210_1280.jpg`,
+     `./assets/img/sea-2563389_1280.jpg`,
+     `./assets/img/snow-bunting-6781122_1280.jpg`,
+     `./assets/img/snow-leopard-cubs-8039138_1280.jpg`,
+     `./assets/img/travel-8785493_1280.jpg`,
+     `./assets/img/winter-1675197_1280.jpg`,
     ];
 
 
@@ -87,13 +87,13 @@ function switchButtonsFooter(imageNameNumbering) {
     let dialogFooter = document.getElementById('switchButton');
     dialogFooter.innerHTML =    `
                                 <button class="arrow_left" id="buttonLeftArrow" onclick="imageSwitching(${imageNameNumbering}, ${false})">
-                                    <img class="left_arrow_button" src="../assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the left"/>
+                                    <img class="left_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the left"/>
                                 </button>
 
                                 <span> ${[imageNameNumbering + 1]}/12 </span>
 
                                 <button class="arrow-right" id="buttonRightArrow" onclick="imageSwitching(${imageNameNumbering}, ${true})">
-                                    <img class="right_arrow_button" src="../assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the right"/>
+                                    <img class="right_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the right"/>
                                 </button>
                                 `;
 }

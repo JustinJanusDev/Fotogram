@@ -86,13 +86,13 @@ function photoCollection(imageNameNumbering) {
 function switchButtonsFooter(imageNameNumbering) {
     let dialogFooter = document.getElementById('switchButton');
     dialogFooter.innerHTML =    `
-                                <button class="arrow_left" id="buttonLeftArrow" onclick="imageSwitching(${imageNameNumbering}, ${false})">
+                                <button class="arrow_left" id="buttonLeftArrow" onclick="imageSwitching(${imageNameNumbering}, ${false}), tabFocus('left')">
                                     <img class="left_arrow_button" src="../assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the left"/>
                                 </button>
 
                                 <span> ${[imageNameNumbering + 1]}/12 </span>
 
-                                <button class="arrow-right" id="buttonRightArrow" onclick="imageSwitching(${imageNameNumbering}, ${true})">
+                                <button class="arrow-right" id="buttonRightArrow" onclick="imageSwitching(${imageNameNumbering}, ${true}), tabFocus('right')">
                                     <img class="right_arrow_button" src="../assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the right"/>
                                 </button>
                                 `;
@@ -113,6 +113,11 @@ function imageSwitching(popUpDialog, connection) {
             createDialog(popUpDialog - 1);
         }
     }
+}
+
+
+function tabFocus(id) {
+    document.getElementById(id).focus();
 }
 
 

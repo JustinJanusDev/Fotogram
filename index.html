@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Fotogram</title>
+    <!-- <link rel="shortcut icon" href="" type="image/x-icon"> -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./settings_for_css/fonts.css">
+    <link rel="stylesheet" href="./settings_for_css/variablen.css">
+
+    <script src="script.js"></script>
+
+</head>
+
+
+<body id="photoCollectionWebsite" onload="initialize()">
+    
+    <header class="headline_section">
+
+        <nav>
+            <img src="./assets/icons/website_title.svg" alt="">
+        </nav>
+
+    </header>
+
+   
+    
+    <main class="overview">
+
+        <!-- main content = title + photo gallery  -->
+
+        <article class="article_section">
+            <h1>Your personal photo album</h1>
+
+            <section class="collection_layout">
+                <ul id="photoGallery"></ul>
+            </section>
+
+            <dialog id="popUpGallery" onclick="openCloseDialog()">
+                <article onclick="stopPropagation(event)">
+                    <header class="dialog_head" id="headlinePopUpWindow">
+                        <h2 id="imageTitle"></h2>
+                        <button class="close_button" onclick="openCloseDialog()">
+                            <img src="./assets/icons/closed_unclicked.svg" alt="closed Button">
+                        </button>
+                    </header>
+
+                    <figure id="singlePhotoCollection"></figure>
+
+                    <footer class="dialog_footer" id="switchButton"></footer>
+                </article>
+            </dialog>
+
+        </article>
+    
+    </main>
+    
+
+    <footer>
+        <img class="logo_DA" src="./assets/icons/da_logo.png" alt="Logo of the Developer Akademie">
+        <a href="Impressum.html">Impressum</a>
+    </footer>
+
+    
+
+</body>
+
+</html>

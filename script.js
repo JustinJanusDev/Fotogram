@@ -30,11 +30,6 @@ let namedPictures = [
     ];
 
 
-function initialize() {
-    insertPictures();
-}
-
-
 function popUp(popUpDialog) {
     let dialogRef = document.getElementById('popUpGallery');
     createDialog(popUpDialog);
@@ -69,33 +64,33 @@ function titleDialog(imageNameNumbering) {
 
 
 function createImageName(imageNameNumbering) {
-    return  `
-            <h2> ${namedPictures[imageNameNumbering]} </h2>
-            `;
+    return `
+        <h2> ${namedPictures[imageNameNumbering]} </h2>
+    `;
 }
 
 
 function photoCollection(imageNameNumbering) {
     let dialogPhotoCollection = document.getElementById('singlePhotoCollection');
-    dialogPhotoCollection.innerHTML =   `
-                                        <img src="${takingImages[imageNameNumbering]}" alt="Image Close-Up">
-                                        `;
+    dialogPhotoCollection.innerHTML = `
+        <img src="${takingImages[imageNameNumbering]}" alt="Image Close-Up">
+    `;
 }
 
 
 function switchButtonsFooter(imageNameNumbering) {
     let dialogFooter = document.getElementById('switchButton');
-    dialogFooter.innerHTML =    `
-                                <button class="arrow_left" id="buttonLeftArrow" onclick="imageSwitching(${imageNameNumbering}, ${false})">
-                                    <img class="left_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the left"/>
-                                </button>
+    dialogFooter.innerHTML = `
+        <button class="arrow_left" id="buttonLeftArrow" onclick="imageSwitching(${imageNameNumbering}, ${false}), setFocus('buttonLeftArrow')">
+            <img class="left_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the left"/>
+        </button>
 
-                                <span> ${[imageNameNumbering + 1]}/12 </span>
+        <span> ${[imageNameNumbering + 1]}/12 </span>
 
-                                <button class="arrow-right" id="buttonRightArrow" onclick="imageSwitching(${imageNameNumbering}, ${true})">
-                                    <img class="right_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the right"/>
-                                </button>
-                                `;
+        <button class="arrow-right" id="buttonRightArrow" onclick="imageSwitching(${imageNameNumbering}, ${true}), setFocus('buttonRightArrow')">
+            <img class="right_arrow_button" src="./assets/icons/unclicked_button.png" alt="Arrow Switching Photo to the right"/>
+        </button>
+    `;
 }
 
 
@@ -116,7 +111,12 @@ function imageSwitching(popUpDialog, connection) {
 }
 
 
-function insertPictures() {
+function setFocus(id) {
+    document.getElementById(id).focus();
+}
+
+
+function insertImages() {
     let picRef = document.getElementById('photoGallery');
     for (let i = 0; i < namedPictures.length; i++) {
         picRef.innerHTML += implementList(i);
@@ -125,11 +125,11 @@ function insertPictures() {
 
 
 function implementList(i) {
-    return      `
-                <li>
-                    <button onclick='popUp(${i})'>
-                        <img src=${takingImages[i]} alt='Photo ${[i + 1]}'>
-                    </button>
-                </li>
-                `;
+    return `
+        <li>
+        <button onclick='popUp(${i})'>
+            <img src=${takingImages[i]} alt='Photo ${[i + 1]}'>
+        </button>
+        </li>
+    `;
 }
